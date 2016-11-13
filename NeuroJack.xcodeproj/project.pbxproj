@@ -13,6 +13,12 @@
 		BC117D051DD7CE1F00354AB8 /* NeuroJack.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BC117D031DD7CE1F00354AB8 /* NeuroJack.xcdatamodeld */; };
 		BC117D071DD7CE1F00354AB8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC117D061DD7CE1F00354AB8 /* Assets.xcassets */; };
 		BC117D0A1DD7CE1F00354AB8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC117D081DD7CE1F00354AB8 /* LaunchScreen.storyboard */; };
+		BC117D121DD7CE4F00354AB8 /* Cards.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC117D111DD7CE4F00354AB8 /* Cards.swift */; };
+		BC117D141DD7EFD100354AB8 /* spade.png in Resources */ = {isa = PBXBuildFile; fileRef = BC117D131DD7EFD100354AB8 /* spade.png */; };
+		BC117D161DD7EFD600354AB8 /* diamond.png in Resources */ = {isa = PBXBuildFile; fileRef = BC117D151DD7EFD600354AB8 /* diamond.png */; };
+		BC117D181DD7EFDD00354AB8 /* heart.png in Resources */ = {isa = PBXBuildFile; fileRef = BC117D171DD7EFDD00354AB8 /* heart.png */; };
+		BC117D1A1DD7EFE200354AB8 /* club.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BC117D191DD7EFE200354AB8 /* club.jpg */; };
+		BC117D1C1DD7F52100354AB8 /* Perceptron.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC117D1B1DD7F52100354AB8 /* Perceptron.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +30,12 @@
 		BC117D061DD7CE1F00354AB8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BC117D091DD7CE1F00354AB8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BC117D0B1DD7CE1F00354AB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BC117D111DD7CE4F00354AB8 /* Cards.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cards.swift; sourceTree = "<group>"; };
+		BC117D131DD7EFD100354AB8 /* spade.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spade.png; sourceTree = "<group>"; };
+		BC117D151DD7EFD600354AB8 /* diamond.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = diamond.png; sourceTree = "<group>"; };
+		BC117D171DD7EFDD00354AB8 /* heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart.png; sourceTree = "<group>"; };
+		BC117D191DD7EFE200354AB8 /* club.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = club.jpg; sourceTree = "<group>"; };
+		BC117D1B1DD7F52100354AB8 /* Perceptron.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Perceptron.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,11 +70,17 @@
 			children = (
 				BC117CFC1DD7CE1F00354AB8 /* AppDelegate.swift */,
 				BC117CFE1DD7CE1F00354AB8 /* ViewController.swift */,
+				BC117D1B1DD7F52100354AB8 /* Perceptron.swift */,
 				BC117D001DD7CE1F00354AB8 /* Main.storyboard */,
 				BC117D061DD7CE1F00354AB8 /* Assets.xcassets */,
 				BC117D081DD7CE1F00354AB8 /* LaunchScreen.storyboard */,
 				BC117D0B1DD7CE1F00354AB8 /* Info.plist */,
 				BC117D031DD7CE1F00354AB8 /* NeuroJack.xcdatamodeld */,
+				BC117D111DD7CE4F00354AB8 /* Cards.swift */,
+				BC117D131DD7EFD100354AB8 /* spade.png */,
+				BC117D151DD7EFD600354AB8 /* diamond.png */,
+				BC117D171DD7EFDD00354AB8 /* heart.png */,
+				BC117D191DD7EFE200354AB8 /* club.jpg */,
 			);
 			path = NeuroJack;
 			sourceTree = "<group>";
@@ -129,7 +147,11 @@
 			files = (
 				BC117D0A1DD7CE1F00354AB8 /* LaunchScreen.storyboard in Resources */,
 				BC117D071DD7CE1F00354AB8 /* Assets.xcassets in Resources */,
+				BC117D1A1DD7EFE200354AB8 /* club.jpg in Resources */,
+				BC117D141DD7EFD100354AB8 /* spade.png in Resources */,
+				BC117D181DD7EFDD00354AB8 /* heart.png in Resources */,
 				BC117D021DD7CE1F00354AB8 /* Main.storyboard in Resources */,
+				BC117D161DD7EFD600354AB8 /* diamond.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,6 +165,8 @@
 				BC117CFF1DD7CE1F00354AB8 /* ViewController.swift in Sources */,
 				BC117CFD1DD7CE1F00354AB8 /* AppDelegate.swift in Sources */,
 				BC117D051DD7CE1F00354AB8 /* NeuroJack.xcdatamodeld in Sources */,
+				BC117D121DD7CE4F00354AB8 /* Cards.swift in Sources */,
+				BC117D1C1DD7F52100354AB8 /* Perceptron.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
