@@ -11,7 +11,7 @@ import Foundation
 
 class Perceptron {
     var weights:[Double]
-    var learningConstant = 0.1
+    var learningConstant = 0.01
     var inputs:[Double]!
     
     
