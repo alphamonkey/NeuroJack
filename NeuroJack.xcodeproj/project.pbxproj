@@ -19,6 +19,7 @@
 		BC117D181DD7EFDD00354AB8 /* heart.png in Resources */ = {isa = PBXBuildFile; fileRef = BC117D171DD7EFDD00354AB8 /* heart.png */; };
 		BC117D1A1DD7EFE200354AB8 /* club.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BC117D191DD7EFE200354AB8 /* club.jpg */; };
 		BC117D1C1DD7F52100354AB8 /* Perceptron.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC117D1B1DD7F52100354AB8 /* Perceptron.swift */; };
+		BC4C54921DD92594006B6280 /* BlackjackTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4C54911DD92594006B6280 /* BlackjackTable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		BC117D171DD7EFDD00354AB8 /* heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart.png; sourceTree = "<group>"; };
 		BC117D191DD7EFE200354AB8 /* club.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = club.jpg; sourceTree = "<group>"; };
 		BC117D1B1DD7F52100354AB8 /* Perceptron.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Perceptron.swift; sourceTree = "<group>"; };
+		BC4C54911DD92594006B6280 /* BlackjackTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlackjackTable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 			children = (
 				BC117CFC1DD7CE1F00354AB8 /* AppDelegate.swift */,
 				BC117CFE1DD7CE1F00354AB8 /* ViewController.swift */,
+				BC4C54911DD92594006B6280 /* BlackjackTable.swift */,
 				BC117D1B1DD7F52100354AB8 /* Perceptron.swift */,
 				BC117D001DD7CE1F00354AB8 /* Main.storyboard */,
 				BC117D061DD7CE1F00354AB8 /* Assets.xcassets */,
@@ -163,6 +166,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC117CFF1DD7CE1F00354AB8 /* ViewController.swift in Sources */,
+				BC4C54921DD92594006B6280 /* BlackjackTable.swift in Sources */,
 				BC117CFD1DD7CE1F00354AB8 /* AppDelegate.swift in Sources */,
 				BC117D051DD7CE1F00354AB8 /* NeuroJack.xcdatamodeld in Sources */,
 				BC117D121DD7CE4F00354AB8 /* Cards.swift in Sources */,
@@ -330,6 +334,7 @@
 				BC117D101DD7CE1F00354AB8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

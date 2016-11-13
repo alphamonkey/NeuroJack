@@ -134,7 +134,7 @@ class CardDeck {
     }
 }
 
-struct CardTable {
+class CardTable {
     let dealer:CardDealer
     let players:[CardPlayer]
     
@@ -197,8 +197,13 @@ class CardDealer:CardPlayer {
     
 }
 class CardPlayer {
+    
+    var wins = 0
+    var losses = 0
+    
     var hand:[Card]
     var brain:Perceptron = Perceptron(count:3)
+    
     init() {
         hand = []
         
@@ -216,6 +221,7 @@ class CardPlayer {
         }
         return total
     }
+    
     func hasAce() -> Bool {
         for card in hand {
             if card.rank == .Ace {
