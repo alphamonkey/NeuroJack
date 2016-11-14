@@ -19,7 +19,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var winLabel: UILabel!
     @IBOutlet weak var winMeter: UIProgressView!
     
-    let table:BlackjackTable = BlackjackTable()
+    let table:RedRoyaltyTable = RedRoyaltyTable()
 
     @IBAction func goPressed(_ sender: Any) {
     meter1.progressTintColor = UIColor.white
@@ -32,10 +32,10 @@ class ViewController: UIViewController {
         cardCollectionView.reloadData()
     let weights = table.players.first!.brain.weights
         
-    let totalWeight:Double = fabs(weights[0]) + fabs(weights[1]) + fabs(weights[2])
+    let totalWeight:Double = fabs(weights[0]) + fabs(weights[1])
     let weight1 = weights[0]
     let weight2 = weights[1]
-    let weight3 = weights[2]
+  //  let weight3 = weights[2]
     
         if weight1 < 0 {
             meter1.progressTintColor = UIColor.red
@@ -43,12 +43,10 @@ class ViewController: UIViewController {
         if weight2 < 0 {
             meter2.progressTintColor = UIColor.red
         }
-        if weight3 < 0 {
-            meter3.progressTintColor = UIColor.red
-        }
+
     meter1.progress = Float(fabs(weight1) / totalWeight)
     meter2.progress = Float(fabs(weight2) / totalWeight)
-    meter3.progress = Float(fabs(weight3) / totalWeight)
+  //  meter3.progress = Float(fabs(weight3) / totalWeight)
 
     winMeter.progress = Float(table.players.first!.wins) / Float(table.players.first!.losses + table.players.first!.wins)
     winLabel.text = "Win Rate: \(winMeter.progress)"

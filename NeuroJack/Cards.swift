@@ -13,7 +13,19 @@ enum Suit {
     case Heart
     case Spade
     case Club
-
+    
+    func doubleValue() -> Double {
+        switch self {
+        case .Diamond:
+            return 0.0
+        case .Heart:
+            return 1.0
+        case .Spade:
+            return 2.0
+        case .Club:
+            return 3.0
+        }
+    }
 }
 enum Rank {
     
@@ -202,7 +214,7 @@ class CardPlayer {
     var losses = 0
     
     var hand:[Card]
-    var brain:Perceptron = Perceptron(count:3)
+    var brain:Perceptron = Perceptron(count:2)
     
     init() {
         hand = []

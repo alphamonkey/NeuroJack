@@ -37,10 +37,7 @@ class Perceptron {
     
     func feedbackError(error:Int) {
         
-        if(error) == 0 {
-            return
-        }
-       
+  
         for i in 0..<inputs.count {
             
             let newWeight = (Double(inputs[i]) * (Double(error))) * learningConstant
