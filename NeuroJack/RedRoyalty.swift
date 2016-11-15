@@ -26,21 +26,21 @@ class RedRoyaltyTable:CardTable {
             dealer.deal(player: player, count: 1, faceUp: true)
             let card = player.hand.last!
             
-            let guess =  player.brain.feedForward(inputs: [card.rank,card.suit])
+            let guess =  player.brain.feedForward(inputs: [card.suit, card.rank])
             if guess == 1 {
-                if((card.rank == .Jack || card.rank == .Queen || card.rank == .King) && card.suit == .Heart || card.suit == .Diamond) {
+                if((card.suit == .Heart || card.suit == .Diamond) && (card.rank == .King || card.rank == .Queen)) {
                     player.brain.feedbackError(error: 0)
                     player.wins += 1
                 }
                 else {
-                    player.brain.feedbackError(error: -1)
+                    player.brain.feedbackError(error: -1.0/12.0)
                     player.losses += 1
                     dealer.hand.append(card)
                 }
             }
             if guess == 0 {
-                if((card.rank == .Jack || card.rank == .Queen || card.rank == .King) && card.suit == .Heart || card.suit == .Diamond) {
-                    player.brain.feedbackError(error: 1)
+                if((card.suit == .Heart || card.suit == .Diamond) && (card.rank == .King || card.rank == .Queen)) {
+                    player.brain.feedbackError(error: 1.0/12.0)
                     player.losses += 1
                     dealer.hand.append(card)
                 }

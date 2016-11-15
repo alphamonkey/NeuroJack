@@ -45,7 +45,7 @@ class BlackjackTable: CardTable {
             self.dealer.deal(player: player, count: 1, faceUp: true)
             
             if(player.handValue() > 21) {
-                player.brain.feedbackError(error: 21 - player.handValue())
+                player.brain.feedbackError(error: 21.0 - Double(player.handValue()))
                 break
             }
             if(player.handValue() == 21) {
@@ -73,7 +73,7 @@ class BlackjackTable: CardTable {
                 player.wins += 1
             }
             else {
-                player.brain.feedbackError(error:self.dealer.handValue() - player.handValue())
+                player.brain.feedbackError(error:Double(self.dealer.handValue() - player.handValue()))
                 
                 player.losses += 1
             }

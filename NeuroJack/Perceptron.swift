@@ -26,7 +26,7 @@ extension Double:NeuralInput {
 }
 class Perceptron {
     var weights:[Double]
-    var learningConstant = 0.1
+    var learningConstant = 1.0
     var inputs:[NeuralInput]!
     var bias:Double = 1.0
     
@@ -44,6 +44,7 @@ class Perceptron {
         for i in 0..<inputs.count {
             sum += inputs[i].charge * weights[i]
         }
+        sum += weights[inputs.count]
         return sum
     }
     func feedForward(inputs:[NeuralInput]) -> Int {
@@ -53,18 +54,18 @@ class Perceptron {
         return activate(potential:summedInputs())
     }
     
-    func feedbackError(error:Int) {
+    func feedbackError(error:Double) {
         
   
         for i in 0..<inputs.count {
             
-            let newWeight = inputs[i].charge * (Double(error)) * learningConstant
+            let newWeight = inputs[i].charge * error * learningConstant
             weights[i] += newWeight
 
         }
         
         // Add weighted bias
-        let newWeight = bias * (Double(error)) * learningConstant
+        let newWeight = bias * error * learningConstant
         weights[inputs.count] += newWeight
         
     }

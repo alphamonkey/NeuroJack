@@ -24,11 +24,11 @@ extension Suit:NeuralInput {
         case .Diamond:
             return 0.0
         case .Heart:
-            return 1.0
+            return 0.33
         case .Spade:
-            return 2.0
+            return 0.66
         case .Club:
-            return 3.0
+            return 1.0
         }
     }
 }
@@ -87,31 +87,31 @@ extension Rank:NeuralInput {
         switch self {
             
         case .Two:
-            return 2.0
+            return 1.0 / 12.0
         case .Three:
-            return 3.0
+            return 2.0 / 12.0
         case .Four:
-            return 4.0
+            return 3.0 / 12.0
         case .Five:
-            return 5.0
+            return 4.0 / 12.0
         case .Six:
-            return 6.0
+            return 5.0 / 12.0
         case .Seven:
-            return 7.0
+            return 6.0 / 12.0
         case .Eight:
-            return 8.0
+            return 7.0 / 12.0
         case .Nine:
-            return 9.0
+            return 8.0 / 12.0
         case .Ten:
-            return 10.0
+            return 9.0 / 12.0
         case .Jack:
-            return 20.0
+            return 10.0 / 12.0
         case .Queen:
-            return 30.0
+            return 11.0 / 12.0
         case .King:
-            return 40.0
+            return 12.0 / 12.0
         case .Ace:
-            return 1.0
+            return 0.0 / 12.0
         }
     }
 
