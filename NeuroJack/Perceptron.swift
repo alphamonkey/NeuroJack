@@ -28,11 +28,11 @@ class Perceptron {
     var weights:[Double]
     var learningConstant = 0.1
     var inputs:[NeuralInput]!
-    
+    var bias:Double = 1.0
     
     init(count:Int) {
         weights = []
-        for _ in 0..<count {
+        for _ in 0..<count + 1{
             let weight = (Double(arc4random()) / Double(UINT32_MAX) * 2.0) - 1.0
             weights.append(weight)
         }
@@ -62,6 +62,11 @@ class Perceptron {
             weights[i] += newWeight
 
         }
+        
+        // Add weighted bias
+        let newWeight = bias * (Double(error)) * learningConstant
+        weights[inputs.count] += newWeight
+        
     }
     func activate(potential:Double) -> Int {
 
