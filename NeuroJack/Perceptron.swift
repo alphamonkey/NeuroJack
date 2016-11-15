@@ -8,11 +8,26 @@
 
 import Foundation
 
+protocol NeuralInput {
+    var charge:Double {get}
+}
 
+extension Perceptron:NeuralInput {
+    var charge:Double {
+        get {
+            return Double(feedForward(inputs:inputs))
+        }
+    }
+}
+extension Double:NeuralInput {
+    var charge:Double {
+        return self
+    }
+}
 class Perceptron {
     var weights:[Double]
-    var learningConstant = 0.01
-    var inputs:[Double]!
+    var learningConstant = 0.1
+    var inputs:[NeuralInput]!
     
     
     init(count:Int) {
@@ -23,16 +38,19 @@ class Perceptron {
         }
         
     }
-    
-    func feedForward(inputs:[Double]) -> Int {
+    func summedInputs() -> Double {
+        var sum:Double = 0.0
+        
+        for i in 0..<inputs.count {
+            sum += inputs[i].charge * weights[i]
+        }
+        return sum
+    }
+    func feedForward(inputs:[NeuralInput]) -> Int {
 
         self.inputs = inputs
-        var sum:Double = 0.0
 
-        for i in 0..<inputs.count {
-            sum += Double(inputs[i]) * weights[i]
-        }
-        return activate(potential:sum)
+        return activate(potential:summedInputs())
     }
     
     func feedbackError(error:Int) {
@@ -40,7 +58,7 @@ class Perceptron {
   
         for i in 0..<inputs.count {
             
-            let newWeight = (Double(inputs[i]) * (Double(error))) * learningConstant
+            let newWeight = inputs[i].charge * (Double(error)) * learningConstant
             weights[i] += newWeight
 
         }

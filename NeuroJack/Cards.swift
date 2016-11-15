@@ -8,13 +8,18 @@
 
 import Foundation
 import UIKit
+
 enum Suit {
     case Diamond
     case Heart
     case Spade
     case Club
     
-    func doubleValue() -> Double {
+
+}
+
+extension Suit:NeuralInput {
+    var charge:Double {
         switch self {
         case .Diamond:
             return 0.0
@@ -76,15 +81,54 @@ enum Rank {
         }
     }
 }
+
+extension Rank:NeuralInput {
+    var charge:Double {
+        switch self {
+            
+        case .Two:
+            return 2.0
+        case .Three:
+            return 3.0
+        case .Four:
+            return 4.0
+        case .Five:
+            return 5.0
+        case .Six:
+            return 6.0
+        case .Seven:
+            return 7.0
+        case .Eight:
+            return 8.0
+        case .Nine:
+            return 9.0
+        case .Ten:
+            return 10.0
+        case .Jack:
+            return 20.0
+        case .Queen:
+            return 30.0
+        case .King:
+            return 40.0
+        case .Ace:
+            return 1.0
+        }
+    }
+
+}
 class Card {
     let rank:Rank
     let suit:Suit
     var faceUp:Bool
+    
     init(rank:Rank, suit:Suit) {
+        
         self.rank = rank
         self.suit = suit
         self.faceUp = true
+    
     }
+    
     func flipOver() {
         if faceUp == false {
             faceUp = true

@@ -11,6 +11,8 @@ import Foundation
 class RedRoyaltyTable:CardTable {
     
     func reset() {
+        self.players.first!.wins = 0
+        self.players.first!.losses = 0
         dealer.deck = CardDeck()
         dealer.deck.shuffle()
         dealer.hand = []
@@ -24,7 +26,7 @@ class RedRoyaltyTable:CardTable {
             dealer.deal(player: player, count: 1, faceUp: true)
             let card = player.hand.last!
             
-            let guess =  player.brain.feedForward(inputs: [Double(card.rank.value()),Double(card.suit.doubleValue())])
+            let guess =  player.brain.feedForward(inputs: [card.rank,card.suit])
             if guess == 1 {
                 if((card.rank == .Jack || card.rank == .Queen || card.rank == .King) && card.suit == .Heart || card.suit == .Diamond) {
                     player.brain.feedbackError(error: 0)
