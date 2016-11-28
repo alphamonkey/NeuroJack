@@ -10,15 +10,16 @@ import Foundation
 import UIKit
 
 enum Suit {
+    
     case Diamond
     case Heart
     case Spade
     case Club
     
-
 }
 
 extension Suit:NeuralInput {
+    
     var charge:Double {
         switch self {
         case .Diamond:
@@ -32,6 +33,7 @@ extension Suit:NeuralInput {
         }
     }
 }
+
 enum Rank {
     
 
@@ -111,12 +113,13 @@ extension Rank:NeuralInput {
         case .King:
             return 12.0 / 12.0
         case .Ace:
-            return 0.0 / 12.0
+            return 12.0 / 12.0
         }
     }
 
 }
 class Card {
+    
     let rank:Rank
     let suit:Suit
     var faceUp:Bool
@@ -134,6 +137,7 @@ class Card {
             faceUp = true
         }
     }
+    
     func stringValue() -> String {
         switch rank {
         case  .Two, .Three, .Four, .Five, .Six, .Seven, .Eight, .Nine, .Ten:
@@ -258,7 +262,7 @@ class CardPlayer {
     var losses = 0
     
     var hand:[Card]
-    var brain:Perceptron = Perceptron(count:2)
+    var brain:Perceptron = Perceptron(count:3)
     
     init() {
         hand = []

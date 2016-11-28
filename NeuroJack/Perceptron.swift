@@ -13,22 +13,26 @@ protocol NeuralInput {
 }
 
 extension Perceptron:NeuralInput {
+    
     var charge:Double {
         get {
             return Double(feedForward(inputs:inputs))
         }
     }
+    
 }
 extension Double:NeuralInput {
+    
     var charge:Double {
         return self
     }
 }
 class Perceptron {
+    
     var weights:[Double]
     var learningConstant = 1.0
     var inputs:[NeuralInput]!
-    var bias:Double = 1.0
+    var bias:Double = 0.5
     
     init(count:Int) {
         weights = []
@@ -47,11 +51,12 @@ class Perceptron {
         sum += weights[inputs.count]
         return sum
     }
-    func feedForward(inputs:[NeuralInput]) -> Int {
+    
+    func feedForward(inputs:[NeuralInput]) -> Double {
 
         self.inputs = inputs
-
         return activate(potential:summedInputs())
+    
     }
     
     func feedbackError(error:Double) {
@@ -69,7 +74,7 @@ class Perceptron {
         weights[inputs.count] += newWeight
         
     }
-    func activate(potential:Double) -> Int {
+    func activate(potential:Double) -> Double {
 
         if potential < 0.0 {
             return 0

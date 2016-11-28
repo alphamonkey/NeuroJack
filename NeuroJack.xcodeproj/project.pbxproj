@@ -72,8 +72,8 @@
 		BC117CFB1DD7CE1F00354AB8 /* NeuroJack */ = {
 			isa = PBXGroup;
 			children = (
-				BC117D111DD7CE4F00354AB8 /* Cards.swift */,
 				BC117CFC1DD7CE1F00354AB8 /* AppDelegate.swift */,
+				BC117D111DD7CE4F00354AB8 /* Cards.swift */,
 				BC117CFE1DD7CE1F00354AB8 /* ViewController.swift */,
 				BC4C54911DD92594006B6280 /* BlackjackTable.swift */,
 				BC117D1B1DD7F52100354AB8 /* Perceptron.swift */,

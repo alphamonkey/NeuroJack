@@ -19,7 +19,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var winLabel: UILabel!
     @IBOutlet weak var winMeter: UIProgressView!
     
-    let table:RedRoyaltyTable = RedRoyaltyTable()
+    let table:BlackjackTable = BlackjackTable()
 
     @IBAction func goPressed(_ sender: Any) {
     
